@@ -1,0 +1,223 @@
+:root {
+  --primary-bg: linear-gradient(to bottom, #E0E0E0, #FFFFFF, #F5F5F0);
+  --headline-color: #333333;
+  --highlight-color: #C19A6B;
+  --glass-bg: rgba(0, 0, 0, 0.2);
+}
+
+body {
+  margin: 0;
+  font-family: "Russo One", sans-serif;
+  background: var(--primary-bg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Account container */
+.account-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+/* Card style */
+.account-card {
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 30px;
+  padding: 2rem;
+  max-width: 450px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 0 45px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(10px);
+  animation: fadeIn 1s ease forwards;
+  position: relative;
+}
+
+/* Top Bar */
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.top-bar h1 {
+  font-family: 'Condiment', cursive;
+  font-size: 2rem;
+  color: var(--headline-color);
+}
+
+.top-bar h1 i {
+  margin-right: 0.5rem;
+  color: var(--highlight-color);
+}
+
+.top-bar button {
+  background: var(--highlight-color);
+  color: white;
+  border: none;
+  padding: 0.6rem 1rem;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.top-bar button:hover {
+  background: #b58c64;
+  transform: scale(1.05);
+}
+
+/* Profile Picture */
+.profile-pic {
+  position: relative;
+  width: 140px;
+  height: 140px;
+  margin: 0 auto 1.5rem auto;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+}
+
+.profile-pic img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.profile-pic label {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background: var(--highlight-color);
+  color: white;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-size: 1rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  transition: all 0.3s ease;
+}
+
+.profile-pic label:hover {
+  background: #b58c64;
+  transform: scale(1.1);
+}
+
+/* Info Section */
+.info {
+  text-align: left;
+  margin-bottom: 2rem;
+  font-size: 1rem;
+}
+
+.info p {
+  margin: 0.6rem 0;
+}
+
+.info strong {
+  color: var(--highlight-color);
+}
+
+/* Buttons */
+.account-card button.side-button {
+  width: 100%;
+  padding: 0.8rem 0;
+  margin: 0.8rem 0;
+  border-radius: 12px;
+  border: none;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  background: var(--highlight-color);
+  color: white;
+  box-shadow: 0 4px 15px rgba(193,154,107,0.5);
+  transition: all 0.3s ease;
+}
+
+.account-card button.side-button:hover {
+  background: #b58c64;
+  transform: scale(1.05);
+}
+
+/* Code Section */
+#codeSection.hidden {
+  display: none;
+}
+
+#codeSection input {
+  width: 90%;
+  padding: 0.6rem;
+  margin: 0.5rem 0;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+.note {
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 0.5rem;
+}
+
+/* Back link */
+.back-link {
+  display: inline-block;
+  margin-top: 1.5rem;
+  color: var(--highlight-color);
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.back-link:hover {
+  color: #b58c64;
+  transform: scale(1.05);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .account-card {
+    padding: 1.5rem;
+    width: 95%;
+  }
+
+  .top-bar h1 {
+    font-size: 1.5rem;
+  }
+
+  .profile-pic {
+    width: 120px;
+    height: 120px;
+  }
+
+  .profile-pic label {
+    width: 30px;
+    height: 30px;
+    font-size: 0.9rem;
+  }
+
+  .info {
+    font-size: 0.95rem;
+  }
+
+  .account-card button.side-button {
+    font-size: 0.95rem;
+  }
+}
