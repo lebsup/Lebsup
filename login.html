@@ -38,23 +38,21 @@
     const form = document.getElementById("loginForm");
 
     form.addEventListener("submit", (e) => {
-      e.preventDefault();
+      e.preventDefault(); // Prevent page reload
 
       const email = document.getElementById("email").value.trim().toLowerCase();
       const password = document.getElementById("password").value.trim();
 
-      // Get users from localStorage
+      // Get all users from localStorage
       const users = JSON.parse(localStorage.getItem("users")) || [];
 
-      // Find user with matching email and password
-      const user = users.find(u => u.email === email && u.password === password);
+      // Find matching user
+      const user = users.find(u => u.email.toLowerCase() === email && u.password === password);
 
       if (user) {
         alert("✅ Login successful! Welcome back, " + user.firstName + "!");
-        // Store current user in localStorage (optional)
         localStorage.setItem("currentUser", JSON.stringify(user));
-        // Redirect to home page
-        window.location.href = "index.html";
+        window.location.href = "index.html"; // Redirect to homepage
       } else {
         alert("❌ Incorrect email or password. Please try again.");
       }
@@ -63,4 +61,3 @@
 
 </body>
 </html>
-
